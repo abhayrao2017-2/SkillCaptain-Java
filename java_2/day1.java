@@ -1,5 +1,18 @@
 import java.util.*;
 
+public class Amount {
+	public Integer amount;
+}
+
+public class WithdrawalAmount extends Amount {
+
+}
+
+public class DepositAmount extends Amount {
+	
+}
+
+
 public class BankAccount {
 	
 	String accountNumber = "0";
@@ -30,10 +43,24 @@ public class BankAccount {
 		System.out.println("Account Balance: " + accountBalance);
 	}
 
+	public void changeBalance(WithdrawalAmount w) {
+		try {
+      withDraw(w.amount);
+    } catch(Exception e) {
+      System.out.println(e);
+    }
+	}
+
+	public void changeBalance(DepositAmount d) {
+		deposit(d.amount);
+	}
+
   public static void main(String[] args) {
     BankAccount b = new BankAccount("1234","abc");
     b.displayInfo();
-    b.deposit(100);
+    DepositAmount d = new DepositAmount();
+    d.amount = 100;
+    b.changeBalance(d);
     b.displayInfo();
     try {
       b.withDraw(150);
