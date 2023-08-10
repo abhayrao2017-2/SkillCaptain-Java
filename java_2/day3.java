@@ -6,7 +6,7 @@ public class Vehicle {
 	Integer year;
 	Integer rentalPrice;
 
-	public Vehicle(brand, model, year, rentalPrice) {
+	public Vehicle(String brand, String model,Integer year, Integer rentalPrice) {
 		this.brand = brand;
 		this.model = model;
 		this.year = year;
@@ -26,7 +26,7 @@ public class Vehicle {
 
 public class Car extends Vehicle {
 	Integer numberOfSeats;
-	public Car(brand, model, year, rentalPrice) {
+	public Car(String brand, String model,Integer year, Integer rentalPrice) {
 		super(brand, model, year, rentalPrice);
 	}
 	public getNumberOfSeats() {
@@ -37,7 +37,7 @@ public class Car extends Vehicle {
 
 public class Motorcycle extends Vehicle {
 	String engineCapacity;
-	public Motorcycle(brand, model, year, rentalPrice) {
+	public Motorcycle(String brand, String model,Integer year, Integer rentalPrice) {
 		super(brand, model, year, rentalPrice);
 	}
 	public getEngineCapacity() {
